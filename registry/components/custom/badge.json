@@ -1,0 +1,12 @@
+{
+  "$schema": "https://ui.shadcn.com/schema.json",
+  "name": "badge",
+  "type": "components:custom",
+  "files": [
+    {
+      "path": "components/custom/badge.tsx",
+      "content": "import { cn } from '@/lib/utils'\n\ninterface BadgeProps {\n  children: React.ReactNode\n  variant?: 'default' | 'success' | 'warning' | 'error' | 'info'\n  size?: 'sm' | 'md' | 'lg'\n  className?: string\n}\n\nexport function Badge({\n  children,\n  variant = 'default',\n  size = 'md',\n  className,\n}: BadgeProps) {\n  return (\n    <span\n      className={cn(\n        'inline-flex items-center rounded-full font-medium',\n        {\n          'bg-primary/10 text-primary': variant === 'default',\n          'bg-green-500/10 text-green-600 dark:text-green-400':\n            variant === 'success',\n          'bg-yellow-500/10 text-yellow-600 dark:text-yellow-400':\n            variant === 'warning',\n          'bg-red-500/10 text-red-600 dark:text-red-400': variant === 'error',\n          'bg-blue-500/10 text-blue-600 dark:text-blue-400': variant === 'info',\n        },\n        {\n          'px-2 py-0.5 text-xs': size === 'sm',\n          'px-2.5 py-1 text-sm': size === 'md',\n          'px-3 py-1.5 text-base': size === 'lg',\n        },\n        className\n      )}\n    >\n      {children}\n    </span>\n  )\n}\n"
+    }
+  ]
+}
+

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema.json",
+  "name": "stats-card",
+  "type": "components:custom",
+  "registryDependencies": ["card"],
+  "files": [
+    {
+      "path": "components/custom/stats-card.tsx",
+      "content": "import { Card, CardContent } from '@/components/ui/card'\nimport { type LucideProps } from 'lucide-react'\nimport { cn } from '@/lib/utils'\nimport { type ComponentType } from 'react'\n\ninterface StatsCardProps {\n  icon: ComponentType<LucideProps>\n  value: string | number\n  label: string\n  trend?: {\n    value: string\n    isPositive: boolean\n  }\n  className?: string\n}\n\nexport function StatsCard({\n  icon: Icon,\n  value,\n  label,\n  trend,\n  className,\n}: StatsCardProps) {\n  return (\n    <Card className={cn('border-l-4 border-l-primary', className)}>\n      <CardContent className=\"p-6\">\n        <div className=\"flex items-center justify-between\">\n          <div className=\"space-y-1\">\n            <p className=\"text-sm font-medium text-muted-foreground\">{label}</p>\n            <p className=\"text-3xl font-bold\">{value}</p>\n            {trend && (\n              <p\n                className={cn(\n                  'text-sm font-medium',\n                  trend.isPositive ? 'text-green-600' : 'text-red-600'\n                )}\n              >\n                {trend.isPositive ? '↑' : '↓'} {trend.value}\n              </p>\n            )}\n          </div>\n          <div className=\"rounded-full bg-primary/10 p-3\">\n            <Icon className=\"h-6 w-6 text-primary\" />\n          </div>\n        </div>\n      </CardContent>\n    </Card>\n  )\n}\n"
+    }
+  ]
+}
+

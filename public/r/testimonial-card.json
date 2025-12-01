@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "testimonial-card",
+  "type": "registry:component",
+  "title": "Testimonial Card",
+  "description": "Tarjeta de testimonios con sistema de estrellas",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "card"
+  ],
+  "files": [
+    {
+      "path": "src/components/custom/testimonial-card.tsx",
+      "content": "import { Card, CardContent } from \"@/components/ui/card\"\r\nimport { Star } from \"lucide-react\"\r\nimport { cn } from \"@/lib/utils\"\r\n\r\ninterface TestimonialCardProps {\r\n  name: string\r\n  role: string\r\n  company?: string\r\n  content: string\r\n  rating?: number\r\n  avatar?: string\r\n  className?: string\r\n}\r\n\r\nexport function TestimonialCard({\r\n  name,\r\n  role,\r\n  company,\r\n  content,\r\n  rating = 5,\r\n  avatar,\r\n  className,\r\n}: TestimonialCardProps) {\r\n  return (\r\n    <Card className={cn(\"h-full\", className)}>\r\n      <CardContent className=\"p-6\">\r\n        <div className=\"mb-4 flex gap-1\">\r\n          {Array.from({ length: 5 }).map((_, i) => (\r\n            <Star\r\n              key={i}\r\n              className={cn(\r\n                \"h-4 w-4\",\r\n                i < rating\r\n                  ? \"fill-yellow-400 text-yellow-400\"\r\n                  : \"fill-muted text-muted\"\r\n              )}\r\n            />\r\n          ))}\r\n        </div>\r\n        <p className=\"mb-4 text-sm text-muted-foreground\">\"{content}\"</p>\r\n        <div className=\"flex items-center gap-3\">\r\n          {avatar ? (\r\n            <img\r\n              src={avatar}\r\n              alt={name}\r\n              className=\"h-10 w-10 rounded-full object-cover\"\r\n            />\r\n          ) : (\r\n            <div className=\"flex h-10 w-10 items-center justify-center rounded-full bg-primary/10\">\r\n              <span className=\"text-sm font-semibold text-primary\">\r\n                {name.charAt(0).toUpperCase()}\r\n              </span>\r\n            </div>\r\n          )}\r\n          <div>\r\n            <p className=\"text-sm font-semibold\">{name}</p>\r\n            <p className=\"text-xs text-muted-foreground\">\r\n              {role}\r\n              {company && ` • ${company}`}\r\n            </p>\r\n          </div>\r\n        </div>\r\n      </CardContent>\r\n    </Card>\r\n  )\r\n}\r\n\r\n",
+      "type": "registry:component"
+    }
+  ]
+}

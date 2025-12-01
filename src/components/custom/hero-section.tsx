@@ -1,6 +1,6 @@
-import { Button } from '@/components/ui/button'
-import { ArrowRight, Sparkles } from 'lucide-react'
-import { cn } from '@/lib/utils'
+import { Button } from "@/components/ui/button"
+import { ArrowRight, Sparkles } from "lucide-react"
+import { cn } from "@/lib/utils"
 
 interface HeroSectionProps {
   title: string
@@ -28,7 +28,7 @@ export function HeroSection({
   return (
     <section
       className={cn(
-        'relative overflow-hidden rounded-lg border bg-gradient-to-br from-primary/5 via-background to-secondary/5 p-8 md:p-12',
+        "relative overflow-hidden rounded-lg border bg-gradient-to-br from-primary/5 via-background to-secondary/5 p-8 md:p-12",
         className
       )}
     >

@@ -1,8 +1,8 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { Button } from '@/components/ui/button'
-import { type LucideProps } from 'lucide-react'
-import { cn } from '@/lib/utils'
-import { type ComponentType } from 'react'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
+import { type LucideProps } from "lucide-react"
+import { cn } from "@/lib/utils"
+import { type ComponentType } from "react"
 
 interface FeatureCardProps {
   icon: ComponentType<LucideProps>
@@ -10,7 +10,7 @@ interface FeatureCardProps {
   description: string
   actionLabel?: string
   onAction?: () => void
-  variant?: 'default' | 'highlighted'
+  variant?: "default" | "highlighted"
   className?: string
 }
 
@@ -20,14 +20,14 @@ export function FeatureCard({
   description,
   actionLabel,
   onAction,
-  variant = 'default',
+  variant = "default",
   className,
 }: FeatureCardProps) {
   return (
     <Card
       className={cn(
-        'group transition-all hover:shadow-lg',
-        variant === 'highlighted' && 'border-primary bg-primary/5',
+        "group transition-all hover:shadow-lg",
+        variant === "highlighted" && "border-primary bg-primary/5",
         className
       )}
     >

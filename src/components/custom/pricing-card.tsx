@@ -1,7 +1,7 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { Button } from '@/components/ui/button'
-import { Check, X } from 'lucide-react'
-import { cn } from '@/lib/utils'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
+import { Check, X } from "lucide-react"
+import { cn } from "@/lib/utils"
 
 interface PricingFeature {
   text: string
@@ -23,7 +23,7 @@ interface PricingCardProps {
 export function PricingCard({
   name,
   price,
-  period = '/mes',
+  period = "/mes",
   description,
   features,
   isPopular = false,
@@ -34,8 +34,8 @@ export function PricingCard({
   return (
     <Card
       className={cn(
-        'relative flex flex-col',
-        isPopular && 'border-primary shadow-lg',
+        "relative flex flex-col",
+        isPopular && "border-primary shadow-lg",
         className
       )}
     >
@@ -65,8 +65,8 @@ export function PricingCard({
               )}
               <span
                 className={cn(
-                  'text-sm',
-                  !feature.included && 'text-muted-foreground line-through'
+                  "text-sm",
+                  !feature.included && "text-muted-foreground line-through"
                 )}
               >
                 {feature.text}
@@ -76,7 +76,7 @@ export function PricingCard({
         </ul>
         <Button
           className="w-full"
-          variant={isPopular ? 'default' : 'outline'}
+          variant={isPopular ? "default" : "outline"}
           size="lg"
           onClick={onAction}
         >

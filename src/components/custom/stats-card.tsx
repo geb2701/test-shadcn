@@ -1,7 +1,7 @@
-import { Card, CardContent } from '@/components/ui/card'
-import { type LucideProps } from 'lucide-react'
-import { cn } from '@/lib/utils'
-import { type ComponentType } from 'react'
+import { Card, CardContent } from "@/components/ui/card"
+import { type LucideProps } from "lucide-react"
+import { cn } from "@/lib/utils"
+import { type ComponentType } from "react"
 
 interface StatsCardProps {
   icon: ComponentType<LucideProps>
@@ -22,7 +22,7 @@ export function StatsCard({
   className,
 }: StatsCardProps) {
   return (
-    <Card className={cn('border-l-4 border-l-primary', className)}>
+    <Card className={cn("border-l-4 border-l-primary", className)}>
       <CardContent className="p-6">
         <div className="flex items-center justify-between">
           <div className="space-y-1">
@@ -31,11 +31,11 @@ export function StatsCard({
             {trend && (
               <p
                 className={cn(
-                  'text-sm font-medium',
-                  trend.isPositive ? 'text-green-600' : 'text-red-600'
+                  "text-sm font-medium",
+                  trend.isPositive ? "text-green-600" : "text-red-600"
                 )}
               >
-                {trend.isPositive ? '↑' : '↓'} {trend.value}
+                {trend.isPositive ? "↑" : "↓"} {trend.value}
               </p>
             )}
           </div>

@@ -1,0 +1,90 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "test-shadcn",
+  "homepage": "https://github.com/tu-usuario/test-shadcn",
+  "items": [
+    {
+      "name": "hero-section",
+      "type": "registry:component",
+      "title": "Hero Section",
+      "description": "Banner hero con título, descripción y botones de acción",
+      "registryDependencies": ["button"],
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/custom/hero-section.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "feature-card",
+      "type": "registry:component",
+      "title": "Feature Card",
+      "description": "Tarjeta de características con iconos y variantes",
+      "registryDependencies": ["card", "button"],
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/custom/feature-card.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "stats-card",
+      "type": "registry:component",
+      "title": "Stats Card",
+      "description": "Tarjeta para mostrar estadísticas con iconos y tendencias",
+      "registryDependencies": ["card"],
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/custom/stats-card.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "testimonial-card",
+      "type": "registry:component",
+      "title": "Testimonial Card",
+      "description": "Tarjeta de testimonios con sistema de estrellas",
+      "registryDependencies": ["card"],
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/custom/testimonial-card.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "pricing-card",
+      "type": "registry:component",
+      "title": "Pricing Card",
+      "description": "Tarjeta de precios con lista de características",
+      "registryDependencies": ["card", "button"],
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/custom/pricing-card.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "badge",
+      "type": "registry:component",
+      "title": "Badge",
+      "description": "Componente badge con múltiples variantes y tamaños",
+      "files": [
+        {
+          "path": "src/components/custom/badge.tsx",
+          "type": "registry:component"
+        }
+      ]
+    }
+  ]
+}
+

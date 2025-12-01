@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "feature-card",
+  "type": "registry:component",
+  "title": "Feature Card",
+  "description": "Tarjeta de características con iconos y variantes",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "card",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/custom/feature-card.tsx",
+      "content": "import { Card, CardContent, CardDescription, CardHeader, CardTitle } from \"@/components/ui/card\"\r\nimport { Button } from \"@/components/ui/button\"\r\nimport { type LucideProps } from \"lucide-react\"\r\nimport { cn } from \"@/lib/utils\"\r\nimport { type ComponentType } from \"react\"\r\n\r\ninterface FeatureCardProps {\r\n  icon: ComponentType<LucideProps>\r\n  title: string\r\n  description: string\r\n  actionLabel?: string\r\n  onAction?: () => void\r\n  variant?: \"default\" | \"highlighted\"\r\n  className?: string\r\n}\r\n\r\nexport function FeatureCard({\r\n  icon: Icon,\r\n  title,\r\n  description,\r\n  actionLabel,\r\n  onAction,\r\n  variant = \"default\",\r\n  className,\r\n}: FeatureCardProps) {\r\n  return (\r\n    <Card\r\n      className={cn(\r\n        \"group transition-all hover:shadow-lg\",\r\n        variant === \"highlighted\" && \"border-primary bg-primary/5\",\r\n        className\r\n      )}\r\n    >\r\n      <CardHeader>\r\n        <div className=\"mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 transition-colors group-hover:bg-primary/20\">\r\n          <Icon className=\"h-6 w-6 text-primary\" />\r\n        </div>\r\n        <CardTitle>{title}</CardTitle>\r\n        <CardDescription>{description}</CardDescription>\r\n      </CardHeader>\r\n      {actionLabel && (\r\n        <CardContent>\r\n          <Button variant=\"outline\" size=\"sm\" onClick={onAction}>\r\n            {actionLabel}\r\n          </Button>\r\n        </CardContent>\r\n      )}\r\n    </Card>\r\n  )\r\n}\r\n\r\n",
+      "type": "registry:component"
+    }
+  ]
+}

@@ -124,6 +124,30 @@
           "type": "registry:component"
         }
       ]
+    },
+    {
+      "name": "dashboard-layout",
+      "type": "registry:block",
+      "title": "Dashboard Layout",
+      "description": "Layout completo de dashboard con sidebar, header y área de contenido",
+      "registryDependencies": [
+        "button",
+        "card",
+        "badge"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "src/components/custom/dashboard-layout.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "src/components/custom/dashboard-layout-example.tsx",
+          "type": "registry:example"
+        }
+      ]
     }
   ]
 }

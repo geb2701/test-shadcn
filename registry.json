@@ -5,7 +5,7 @@
   "items": [
     {
       "name": "hero-section",
-      "type": "registry:hero",
+      "type": "registry:component",
       "title": "Hero Section",
       "description": "Banner hero con título, descripción y botones de acción",
       "registryDependencies": [

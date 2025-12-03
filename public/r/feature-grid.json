@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "feature-grid",
+  "type": "registry:component",
+  "title": "Feature Grid",
+  "description": "Grid de características que usa FeatureCard internamente",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "feature-card"
+  ],
+  "files": [
+    {
+      "path": "src/components/custom/feature-grid.tsx",
+      "content": "import { FeatureCard } from \"@/components/custom/feature-card\"\nimport { type ComponentType, type LucideProps } from \"lucide-react\"\nimport { cn } from \"@/lib/utils\"\n\ninterface Feature {\n  icon: ComponentType<LucideProps>\n  title: string\n  description: string\n}\n\ninterface FeatureGridProps {\n  features: Feature[]\n  columns?: 2 | 3 | 4\n  className?: string\n}\n\nexport function FeatureGrid({\n  features,\n  columns = 3,\n  className,\n}: FeatureGridProps) {\n  return (\n    <div\n      className={cn(\n        \"grid gap-6\",\n        {\n          \"grid-cols-1 md:grid-cols-2\": columns === 2,\n          \"grid-cols-1 md:grid-cols-2 lg:grid-cols-3\": columns === 3,\n          \"grid-cols-1 md:grid-cols-2 lg:grid-cols-4\": columns === 4,\n        },\n        className\n      )}\n    >\n      {features.map((feature, index) => (\n        <FeatureCard\n          key={index}\n          icon={feature.icon}\n          title={feature.title}\n          description={feature.description}\n        />\n      ))}\n    </div>\n  )\n}\n\n",
+      "type": "registry:component"
+    }
+  ]
+}
